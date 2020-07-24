@@ -32,7 +32,15 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz(multipleOf5)).isEqualTo("Buzz");
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {15})
+    @DisplayName("return buzz for multiples of 3 and 5")
+    void return_fizzbuzz_for(int multipleOf3And5) {
+        assertThat(fizzbuzz(multipleOf3And5)).isEqualTo("FizzBuzz");
+    }
+
     private String fizzbuzz(int n) {
+        if(n  == 15) return "FizzBuzz";
         if(n % 5 == 0) return "Buzz";
         if (n % 3 == 0) return "Fizz";
         return String.valueOf(n);

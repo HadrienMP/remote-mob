@@ -1,9 +1,13 @@
 package fr.hadrienmp.remote.mob;
 
+import net.jqwik.api.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,6 +41,17 @@ public class FizzBuzzTest {
     @DisplayName("return buzz for multiples of 3 and 5")
     void return_fizzbuzz_for(int multipleOf3And5) {
         assertThat(fizzbuzz(multipleOf3And5)).isEqualTo("FizzBuzz");
+    }
+
+    public Arbitrary<Integer> mutliplesOf3And5(){
+        return Arbitraries.integers()
+                .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
+    }
+    
+    @Property
+    @Report(Reporting.GENERATED)
+    boolean multi(@ForAll("mutliplesOf3And5") int i) {
+        return "FizzBuzz".equals(fizzbuzz(i));
     }
 
     private String fizzbuzz(int n) {

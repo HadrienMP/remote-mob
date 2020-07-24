@@ -1,5 +1,6 @@
 package fr.hadrienmp.remote.mob;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -19,12 +20,13 @@ public class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {3, 6, 9})
-    void fizz(int n) {
-        assertThat(fizzbuzz(n)).isEqualTo("Fizz");
+    @DisplayName("return fizz for multiples of three")
+    void return_fizz_for(int multipleOfThree) {
+        assertThat(fizzbuzz(multipleOfThree)).isEqualTo("Fizz");
     }
 
     private String fizzbuzz(int n) {
-        if (n % 3 ==0 ) return "Fizz";
+        if (n % 3 == 0) return "Fizz";
         return String.valueOf(n);
     }
 }

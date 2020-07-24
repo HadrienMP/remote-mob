@@ -1,4 +1,4 @@
-package fr.hadrienmp.remote.mob.fizzbuzz;
+package fr.hadrienmp.remote.mob.fizzbuzz.fa_1;
 
 import net.jqwik.api.*;
 import org.junit.jupiter.api.DisplayName;

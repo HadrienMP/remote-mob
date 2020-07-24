@@ -47,7 +47,7 @@ public class FizzBuzzTest {
         return Arbitraries.integers()
                 .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
     }
-    
+
     @Property
     @Report(Reporting.GENERATED)
     boolean multi(@ForAll("mutliplesOf3And5") int i) {

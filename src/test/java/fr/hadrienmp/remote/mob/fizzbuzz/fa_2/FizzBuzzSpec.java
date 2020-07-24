@@ -9,4 +9,8 @@ public class FizzBuzzSpec {
     void one() {
         assertThat("1").isEqualTo("1");
     }
+    @Test
+    void two() {
+        assertThat("2").isEqualTo("2");
+    }
 }

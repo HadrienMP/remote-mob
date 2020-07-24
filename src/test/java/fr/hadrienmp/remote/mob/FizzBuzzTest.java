@@ -9,10 +9,10 @@ public class FizzBuzzTest {
     @ParameterizedTest
     @ValueSource(ints = {1})
     void return_the_number_otherwise(int n) {
-        assertThat(fizzbuzz()).isEqualTo("1");
+        assertThat(fizzbuzz(n)).isEqualTo("1");
     }
 
-    private String fizzbuzz() {
+    private String fizzbuzz(int n) {
         return "1";
     }
 }

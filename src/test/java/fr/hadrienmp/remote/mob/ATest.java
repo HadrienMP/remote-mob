@@ -6,7 +6,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ATest {
     @Test
-    void name() {
-        assertThat("1").isEqualTo("1");
+    void one() {
+        assertThat(fizzbuzz()).isEqualTo("1");
+    }
+
+    private String fizzbuzz() {
+        return "1";
     }
 }

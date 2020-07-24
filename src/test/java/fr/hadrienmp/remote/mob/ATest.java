@@ -1,11 +1,13 @@
 package fr.hadrienmp.remote.mob;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ATest {
-    @Test
+    @ParameterizedTest
+    @ValueSource(ints = {1})
     void one() {
         assertThat(fizzbuzz()).isEqualTo("1");
     }

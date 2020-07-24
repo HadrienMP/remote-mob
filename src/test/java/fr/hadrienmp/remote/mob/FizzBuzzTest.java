@@ -26,13 +26,13 @@ public class FizzBuzzTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {5})
+    @ValueSource(ints = {5, 10})
     void return_buzz_for(int n) {
         assertThat(fizzbuzz(n)).isEqualTo("Buzz");
     }
 
     private String fizzbuzz(int n) {
-        if(n == 5) return "Buzz";
+        if(n == 5 || n == 10) return "Buzz";
         if (n % 3 == 0) return "Fizz";
         return String.valueOf(n);
     }

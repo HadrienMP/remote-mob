@@ -45,12 +45,7 @@ public class FizzBuzzTest {
                 .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
     }
 
-    @Property
-    boolean multi(@ForAll("mutliplesOf3And5") int i) {
-        return "FizzBuzz".equals(fizzbuzz(i));
-    }
-
-    private String fizzbuzz(int n) {
+    public static String fizzbuzz(int n) {
         if(n  % 3 == 0 && n % 5 == 0) return "FizzBuzz";
         if(n % 5 == 0) return "Buzz";
         if (n % 3 == 0) return "Fizz";

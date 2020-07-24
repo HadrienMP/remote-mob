@@ -16,8 +16,9 @@ public class FizzBuzzTest {
     void return_the_number_otherwise(int n, String expected) {
         assertThat(fizzbuzz(n)).isEqualTo(expected);
     }
+
     @ParameterizedTest
-    @ValueSource(ints = {3})
+    @ValueSource(ints = {3, 6})
     void fizz(int n) {
         assertThat(fizzbuzz(n)).isEqualTo("Fizz");
     }
@@ -25,6 +26,7 @@ public class FizzBuzzTest {
 
     private String fizzbuzz(int n) {
         if (n == 3) return "Fizz";
+        if (n == 6) return "Fizz";
         return String.valueOf(n);
     }
 }

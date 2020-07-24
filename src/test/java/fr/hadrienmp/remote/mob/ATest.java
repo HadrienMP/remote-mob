@@ -7,6 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ATest {
     @Test
     void name() {
-        assertThat(true).isTrue();
+        assertThat("1").isEqualTo("1");
     }
 }

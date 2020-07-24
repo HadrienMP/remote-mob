@@ -41,12 +41,12 @@ public class FizzBuzzTest {
     }
 
     @Property
-    public boolean stuff(@ForAll("mutliplesOf3And5") int multipleOf3And5) {
+    public boolean stuff(@ForAll("multiplesOf3And5") int multipleOf3And5) {
         return "FizzBuzz".equals(fizzbuzz(multipleOf3And5));
     }
 
     @Provide
-    public Arbitrary<Integer> mutliplesOf3And5() {
+    public Arbitrary<Integer> multiplesOf3And5() {
         return Arbitraries.integers()
                           .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
     }

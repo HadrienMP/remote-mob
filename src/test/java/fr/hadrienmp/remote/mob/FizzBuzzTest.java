@@ -40,14 +40,20 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz(multipleOf3And5)).isEqualTo("FizzBuzz");
     }
 
-    public Arbitrary<Integer> mutliplesOf3And5(){
+    @Property
+    public boolean stuff(@ForAll("mutliplesOf3And5") int multipleOf3And5) {
+        return "FizzBuzz".equals(fizzbuzz(multipleOf3And5));
+    }
+
+    @Provide
+    public Arbitrary<Integer> mutliplesOf3And5() {
         return Arbitraries.integers()
-                .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
+                          .filter(integer -> integer % 3 == 0 && integer % 5 == 0);
     }
 
     public static String fizzbuzz(int n) {
-        if(n  % 3 == 0 && n % 5 == 0) return "FizzBuzz";
-        if(n % 5 == 0) return "Buzz";
+        if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
+        if (n % 5 == 0) return "Buzz";
         if (n % 3 == 0) return "Fizz";
         return String.valueOf(n);
     }

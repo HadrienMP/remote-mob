@@ -23,11 +23,8 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz(n)).isEqualTo("Fizz");
     }
 
-
     private String fizzbuzz(int n) {
-        if (n == 3) return "Fizz";
-        if (n == 6) return "Fizz";
-        if (n == 9) return "Fizz";
+        if (n % 3 ==0 ) return "Fizz";
         return String.valueOf(n);
     }
 }

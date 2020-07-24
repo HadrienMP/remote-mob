@@ -5,10 +5,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ATest {
+public class FizzBuzzTest {
     @ParameterizedTest
     @ValueSource(ints = {1})
-    void one() {
+    void return_the_number_otherwise() {
         assertThat(fizzbuzz()).isEqualTo("1");
     }
 

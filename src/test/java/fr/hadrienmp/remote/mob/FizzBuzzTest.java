@@ -25,7 +25,14 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz(multipleOfThree)).isEqualTo("Fizz");
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {5})
+    void return_buzz_for(int n) {
+        assertThat(fizzbuzz(n)).isEqualTo("Buzz");
+    }
+
     private String fizzbuzz(int n) {
+        if(n == 5) return "Buzz";
         if (n % 3 == 0) return "Fizz";
         return String.valueOf(n);
     }

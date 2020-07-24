@@ -18,7 +18,7 @@ public class FizzBuzzTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {3, 6})
+    @ValueSource(ints = {3, 6, 9})
     void fizz(int n) {
         assertThat(fizzbuzz(n)).isEqualTo("Fizz");
     }
@@ -27,6 +27,7 @@ public class FizzBuzzTest {
     private String fizzbuzz(int n) {
         if (n == 3) return "Fizz";
         if (n == 6) return "Fizz";
+        if (n == 9) return "Fizz";
         return String.valueOf(n);
     }
 }

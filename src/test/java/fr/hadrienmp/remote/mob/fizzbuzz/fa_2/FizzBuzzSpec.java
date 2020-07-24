@@ -11,10 +11,14 @@ public class FizzBuzzSpec {
     }
     @Test
     void two() {
-        assertThat("2").isEqualTo("2");
+        assertThat(fizzbuzz2()).isEqualTo("2");
     }
 
     private String fizzbuzz() {
-        return "1";
+        return "" + 1;
+    }
+
+    private String fizzbuzz2() {
+        return "" + 2;
     }
 }

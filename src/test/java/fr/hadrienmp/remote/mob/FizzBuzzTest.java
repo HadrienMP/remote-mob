@@ -10,7 +10,8 @@ public class FizzBuzzTest {
     @ParameterizedTest
     @CsvSource({
             "1,1",
-            "2,2"
+            "2,2",
+            "4,4"
     })
     void return_the_number_otherwise(int n, String expected) {
         assertThat(fizzbuzz(n)).isEqualTo(expected);

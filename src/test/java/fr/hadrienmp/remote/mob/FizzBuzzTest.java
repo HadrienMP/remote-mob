@@ -27,8 +27,9 @@ public class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {5, 10, 20})
-    void return_buzz_for(int n) {
-        assertThat(fizzbuzz(n)).isEqualTo("Buzz");
+    @DisplayName("return buzz for multiples of five")
+    void return_buzz_for(int multipleOf5) {
+        assertThat(fizzbuzz(multipleOf5)).isEqualTo("Buzz");
     }
 
     private String fizzbuzz(int n) {
